@@ -19,12 +19,20 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body>
+  <body layout="column">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+	
+	<div ng-include="'./app/components/navbar/navbar.html'"></div>
 
-    <div ui-view></div>
+	<div layout="row">
+		<div ng-include="'./app/components/navbar/sidenav.html'"></div>
+
+		<md-content>
+    		<div ui-view></div>
+		</md-content>
+	</div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

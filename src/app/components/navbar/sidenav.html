@@ -1,0 +1,17 @@
+<div ng-controller="NavigationController as nav">
+	<md-sidenav md-component-id="left" class="md-sidenav-left">
+		<md-toolbar>
+			<h1 class="md-toolbar-tools">Pyre</h1>
+		</md-toolbar>
+		<md-content>
+			<md-list>
+				<md-list-item ng-repeat="link in nav.links" ng-click="doSomething()">
+					<p>{{ link }}</p>
+				</md-list-item>
+			</md-list>
+			<!-- <md-button class="md-primary" ng-repeat="link in nav.links">
+				{{ link }}
+			</md-button> -->
+		</md-content>
+	</md-sidenav>
+</div>

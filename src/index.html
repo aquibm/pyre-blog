@@ -2,7 +2,7 @@
 <html ng-app="pyreBlog" ng-strict-di>
   <head>
     <meta charset="utf-8">
-    <title>pyreBlog</title>
+    <title>Pyre - Backend-less Blog</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -29,7 +29,8 @@
 	<div layout="row">
 		<div ng-include="'./app/components/navbar/sidenav.html'"></div>
 
-		<md-content>
+		<md-content flex layout="column">
+			<div class="backdrop"></div>
     		<div ui-view></div>
 		</md-content>
 	</div>

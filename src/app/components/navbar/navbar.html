@@ -1,6 +1,6 @@
 <!-- ControllerAs nav (take in sidenav service) -->
 <div ng-controller="NavigationController as nav">
-	<md-toolbar layout="row">
+	<md-toolbar layout="row" class="pyre-nav-toolbar">
 		<div class="md-toolbar-tools">
 			<md-button ng-click="nav.toggleSideNav()" hide-gt-sm class="md-icon-button">
 				<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg">
@@ -11,9 +11,11 @@
 			<span flex></span>
 
 			<div hide-sm>
-				<a href="#" class="md-button" ng-repeat="link in nav.links">{{ link }}</a>
+				<span ng-repeat="link in nav.links">
+					<a class="md-button" ng-href="{{ link.ref }}" target="{{ link.target }}" ng-if="link.external">{{ link.name }}</a>
+					<a class="md-button" ui-sref="{{ link.ref }}" ng-if="!link.external">{{ link.name }}</a>
+				</span>
 			</div>
-
 		</div>
 	</md-toolbar>
 </div>

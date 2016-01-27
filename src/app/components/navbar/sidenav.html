@@ -1,17 +1,19 @@
 <div ng-controller="NavigationController as nav">
-	<md-sidenav md-component-id="left" class="md-sidenav-left">
-		<md-toolbar>
+	<md-sidenav md-component-id="left" class="pyre-sidenav md-sidenav-left md-whiteframe-z2">
+
+		<md-toolbar class="pyre-nav-toolbar">
 			<h1 class="md-toolbar-tools">Pyre</h1>
 		</md-toolbar>
-		<md-content>
-			<md-list>
-				<md-list-item ng-repeat="link in nav.links" ng-click="doSomething()">
-					<p>{{ link }}</p>
-				</md-list-item>
-			</md-list>
-			<!-- <md-button class="md-primary" ng-repeat="link in nav.links">
-				{{ link }}
-			</md-button> -->
+
+		<md-content flex role="navigation">
+			<ul class="pyre-sidenav-links">
+				<li ng-repeat="link in nav.links">
+					<md-menu-item>
+			          	<md-button ui-sref="{{ link.ref }}" ng-if="!link.external">{{ link.name }}</md-button>
+			          	<md-button ng-href="{{ link.ref }}" target="{{ link.target }}" ng-if="link.external">{{ link.name }}</md-button>
+			        </md-menu-item>
+				</li>
+			</ul>
 		</md-content>
 	</md-sidenav>
 </div>

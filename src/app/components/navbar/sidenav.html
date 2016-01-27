@@ -1,8 +1,9 @@
-<div ng-controller="NavigationController as nav">
-	<md-sidenav md-component-id="left" class="pyre-sidenav md-sidenav-left md-whiteframe-z2">
+<div ng-controller="NavigationController as nav" layout="column" flex>
+	<md-sidenav flex md-component-id="left" class="pyre-sidenav md-sidenav-left md-whiteframe-z2" md-is-locked-open="$mdMedia('gt-md')">
 
 		<md-toolbar class="pyre-nav-toolbar">
 			<h1 class="md-toolbar-tools">Pyre</h1>
+			<span class="md-caption">A backend-less blog.</span>
 		</md-toolbar>
 
 		<md-content flex role="navigation">

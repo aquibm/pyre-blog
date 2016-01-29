@@ -1,13 +1,6 @@
-<md-toolbar layout="row" layout-align="center center">
-
-  <md-button href="https://github.com/Swiip/generator-gulp-angular">Gulp Angular</md-button>
-
-  <section flex layout="row" layout-align="left center">
-    <md-button href="#" class="md-raised">Home</md-button>
-    <md-button href="#" class="md-raised">About</md-button>
-    <md-button href="#" class="md-raised">Contact</md-button>
-  </section>
-
-  <md-button class="acme-navbar-text">Application was created {{ vm.relativeDate }}.</md-button>
-
+<md-toolbar class="md-toolbar-tools pyre-topnav" hide-gt-md>
+	<md-button class="md-icon-button" aria-label="Navigation" ng-click="nav.toggleSidenav()">
+	    <md-icon md-svg-icon="assets/images/burger.svg"></md-icon>
+	</md-button>
+	<h1 class="md-display-1">Pyre</h1>
 </md-toolbar>

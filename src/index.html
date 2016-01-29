@@ -2,7 +2,7 @@
 <html ng-app="pyreBlog" ng-strict-di>
   <head>
     <meta charset="utf-8">
-    <title>Pyre - Backend-less Blog</title>
+    <title>Pyre - An opensource backend-less blogging platform.</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -24,15 +24,70 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 	
-	<div layout="column" ng-include="'./app/components/navbar/sidenav.html'"></div>
-
-	<div layout="column" flex>
-		<div layout="column" ng-include="'./app/components/navbar/navbar.html'"></div>
-
-		<div layout="column" class="page-content" flex>
-			<div ui-view></div>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2 pyre-navigation" md-component-id="pyreSidenav" md-is-locked-open="$mdMedia('gt-md')">
+		<div class="pyre-blog-title">
+			<h1 class="md-display-1">Pyre</h1>
 		</div>
-	</div>
+		
+		<div class="pyre-nav-separator"></div>
+
+		<div class="pyre-blog-tagline">
+			<p class="md-caption">
+				An open source backend-less blog designed to leverage SaaS technologies like Firebase and Imgur.
+			</p>
+		</div>
+
+		<div class="pyre-nav-separator"></div>
+
+		<nav class="pyre-nav">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>		
+    </md-sidenav>
+
+    <md-content flex layout="column">
+		<md-toolbar class="md-toolbar-tools pyre-topnav" hide-gt-md>
+			<md-button class="md-icon-button" aria-label="Settings">
+			    <md-icon md-svg-icon="assets/images/burger.svg"></md-icon>
+			</md-button>
+			<h1 class="md-display-1">Pyre</h1>
+		</md-toolbar>
+
+		<md-content class="pyre-blog-page" flex>
+			<md-card class="pyre-blog-post">
+				<img src="http://placehold.it/1280x480/bada55/33333" class="md-card-image">
+
+				<md-card-title>
+          			<md-card-title-text>
+            			<span class="md-headline">Lorem ipsum dolor sit amet.</span>
+          			</md-card-title-text>
+        		</md-card-title>
+				
+				<md-card-content>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corporis qui error mollitia. Dignissimos minus est iste hic, sequi architecto, ad iusto modi aspernatur enim cupiditate neque reprehenderit, eos aut!</p>
+					<p>Et perferendis nobis obcaecati tenetur id officia quos ab ullam dolorem sapiente molestias, minima nulla eaque! Debitis ipsa, excepturi aliquid, molestias magni, id sequi reiciendis officia ipsam aspernatur repudiandae quod.</p>
+				</md-card-content>
+			</md-card>
+
+			<md-card class="pyre-blog-post">
+				<img src="http://placehold.it/1280x480/f09d09/33333" class="md-card-image">
+
+				<md-card-title>
+          			<md-card-title-text>
+            			<span class="md-headline">Lorem ipsum dolor sit amet.</span>
+          			</md-card-title-text>
+        		</md-card-title>
+				
+				<md-card-content>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corporis qui error mollitia. Dignissimos minus est iste hic, sequi architecto, ad iusto modi aspernatur enim cupiditate neque reprehenderit, eos aut!</p>
+					<p>Et perferendis nobis obcaecati tenetur id officia quos ab ullam dolorem sapiente molestias, minima nulla eaque! Debitis ipsa, excepturi aliquid, molestias magni, id sequi reiciendis officia ipsam aspernatur repudiandae quod.</p>
+				</md-card-content>
+			</md-card>
+		</md-content>
+    </md-content>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

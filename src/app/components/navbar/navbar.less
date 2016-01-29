@@ -1,18 +1,60 @@
-ul.pyre-sidenav-links {
-	margin: 0;
-	padding: 0;
+md-sidenav.pyre-navigation {
+	background: #333;
+	color: white;
+	justify-content: center;
+
+	.pyre-blog-title {
+		margin-left: 10%;
+		margin-right: 10%;
+
+		h1 {
+			margin: 0;
+		}
+	}
+
+	.pyre-blog-tagline {
+		margin-left: 10%;
+		margin-right: 10%;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.pyre-nav-separator {
+		background: white;
+		display: block;
+		height: 1px;
+		width: 40%;
+		margin-left: 10%;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	nav.pyre-nav {
+		margin-left: 10%;
+		margin-right: 10%;
+
+		ul {
+			margin: 0; padding: 0;
+
+			li {
+				margin-bottom: 2%;
+				
+				a {
+					color: white;
+					text-decoration: none;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 }
 
-md-toolbar.pyre-nav-toolbar {
-	background: white;
-	color: #333;
-
-	.md-caption {
-		margin-bottom: 20px;
-		margin-left: 15px;
-	}
-
-	md-icon.pyre-burger-icon {
-		color: #333;
-	}
+md-toolbar.pyre-topnav {
+	background: #333;
+	color: white;
 }

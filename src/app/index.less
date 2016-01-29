@@ -59,12 +59,29 @@ html {
 	padding: 0.2em 0;
 }
 
-body {
-	background: #F1F1F1;
+md-content.pyre-blog-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #DADFE1;
 }
 
-.page-content {
-	padding: 8%;
+@media screen and (min-width: 1700px) {
+	md-content.pyre-blog-page {
+		padding-top: 70px;
+	}
+}
+
+md-card md-card-title {
+	padding: 24px 16px 16px;
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+}
+
+.pyre-blog-post {
+	max-width: 1280px;
+	margin-bottom: 30px;
 }
 
 /**

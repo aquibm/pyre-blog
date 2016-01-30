@@ -30,35 +30,7 @@
 		<div ng-include="'./app/components/navbar/navbar.html'" ng-controller="NavigationController as nav"></div>
 
 		<md-content class="pyre-blog-page" flex>
-			<md-card class="pyre-blog-post">
-				<img src="http://placehold.it/1280x480/bada55/33333" class="md-card-image">
-
-				<md-card-title>
-          			<md-card-title-text>
-            			<span class="md-headline">Lorem ipsum dolor sit amet.</span>
-          			</md-card-title-text>
-        		</md-card-title>
-				
-				<md-card-content>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corporis qui error mollitia. Dignissimos minus est iste hic, sequi architecto, ad iusto modi aspernatur enim cupiditate neque reprehenderit, eos aut!</p>
-					<p>Et perferendis nobis obcaecati tenetur id officia quos ab ullam dolorem sapiente molestias, minima nulla eaque! Debitis ipsa, excepturi aliquid, molestias magni, id sequi reiciendis officia ipsam aspernatur repudiandae quod.</p>
-				</md-card-content>
-			</md-card>
-
-			<md-card class="pyre-blog-post">
-				<img src="http://placehold.it/1280x480/f09d09/33333" class="md-card-image">
-
-				<md-card-title>
-          			<md-card-title-text>
-            			<span class="md-headline">Lorem ipsum dolor sit amet.</span>
-          			</md-card-title-text>
-        		</md-card-title>
-				
-				<md-card-content>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corporis qui error mollitia. Dignissimos minus est iste hic, sequi architecto, ad iusto modi aspernatur enim cupiditate neque reprehenderit, eos aut!</p>
-					<p>Et perferendis nobis obcaecati tenetur id officia quos ab ullam dolorem sapiente molestias, minima nulla eaque! Debitis ipsa, excepturi aliquid, molestias magni, id sequi reiciendis officia ipsam aspernatur repudiandae quod.</p>
-				</md-card-content>
-			</md-card>
+			<div ui-view></div>
 		</md-content>
     </md-content>
 

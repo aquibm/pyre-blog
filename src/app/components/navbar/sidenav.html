@@ -1,14 +1,12 @@
 <md-sidenav flex layout="column" class="md-sidenav-left md-whiteframe-z2 pyre-navigation" md-component-id="pyreSidenav" md-is-locked-open="$mdMedia('gt-md')">
 	<div class="pyre-blog-title">
-		<h1 class="md-display-1">Pyre</h1>
+		<h1 class="md-display-1" ng-bind="::nav.blogSettings.blogTitle">Title</h1>
 	</div>
 	
 	<div class="pyre-nav-separator"></div>
 
 	<div class="pyre-blog-tagline">
-		<p class="md-caption">
-			An open source backend-less blog designed to leverage SaaS technologies like Firebase and Imgur.
-		</p>
+		<p class="md-caption" ng-bind="::nav.blogSettings.blogSummary"></p>
 	</div>
 
 	<div class="pyre-nav-separator"></div>

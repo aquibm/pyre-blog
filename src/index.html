@@ -24,15 +24,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div layout="column" ng-include="'./app/components/navbar/sidenav.html'" ng-controller="NavigationController as nav"></div>
-
-    <md-content flex layout="column">
-		<div ng-include="'./app/components/navbar/navbar.html'" ng-controller="NavigationController as nav"></div>
-
-		<md-content class="pyre-blog-page" flex>
-			<div ui-view></div>
-		</md-content>
-    </md-content>
+    <div ui-view layout="row" flex></div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

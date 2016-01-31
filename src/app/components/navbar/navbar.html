@@ -2,5 +2,5 @@
 	<md-button class="md-icon-button" aria-label="Navigation" ng-click="nav.toggleSidenav()">
 	    <md-icon md-svg-icon="assets/images/burger.svg"></md-icon>
 	</md-button>
-	<h1 class="md-display-1">Pyre</h1>
+	<h1 class="md-display-1" ng-bind="::nav.blogSettings.blogTitle"></h1>
 </md-toolbar>

@@ -1,0 +1,9 @@
+<div layout="column" ng-include="'./app/components/navbar/sidenav.html'" ng-controller="NavigationController as nav"></div>
+
+ <md-content flex layout="column">
+	<div ng-include="'./app/components/navbar/navbar.html'" ng-controller="NavigationController as nav"></div>
+
+	<md-content class="pyre-blog-page" flex>
+		<div ui-view></div>
+	</md-content>
+ </md-content>

@@ -1,12 +1,24 @@
+import { ISettingsService } from './integration/settings.service';
+
 /** @ngInject */
 export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
-  $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: 'app/home/home.html',
-      controller: 'HomeController',
-      controllerAs: 'vm'
-    });
+	$stateProvider
+		.state('main', {
+			abstract: true,
+			templateUrl: 'app/main/main.html',
 
-  $urlRouterProvider.otherwise('/');
+			/* @ngInject */
+			resolve: (settingsService: ISettingsService) => {
+				return settingsService.primeSettings();
+			}
+		})
+
+		.state('main.home', {
+			url: '/',
+			templateUrl: 'app/home/home.html',
+			controller: 'HomeController',
+			controllerAs: 'vm'
+		});
+
+	$urlRouterProvider.otherwise('/');
 }

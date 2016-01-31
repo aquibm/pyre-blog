@@ -6,6 +6,7 @@ import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 
 // Services
+import { SettingsService } from './integration/settings.service';
 import { FirebaseGatewayService } from './integration/firebase.gateway.service';
 
 // Controllers
@@ -34,16 +35,17 @@ module pyreBlog {
 
 	angular.module('pyreBlog', dependencies)
 		// Constants
+		.config(routerConfig)
 		.constant('moment', moment)
 		.constant('Firebase', Firebase)
 
 		// Config
 		.config(config)
-		.config(routerConfig)
 		.run(runBlock)
 
 		// Services
-		.service('FirebaseGatewayService', FirebaseGatewayService)
+		.service('settingsService', SettingsService)
+		.service('firebaseGatewayService', FirebaseGatewayService)
 
 		// Controllers
 		.controller('NavigationController', NavigationController)

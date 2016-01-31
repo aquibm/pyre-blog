@@ -1,21 +1,27 @@
 <md-sidenav flex layout="column" class="md-sidenav-left md-whiteframe-z2 pyre-navigation" md-component-id="pyreSidenav" md-is-locked-open="$mdMedia('gt-md')">
-	<div class="pyre-blog-title">
-		<h1 class="md-display-1" ng-bind="::nav.blogSettings.blogTitle">Title</h1>
+	<div class="blog-section" flex layout="column">
+		<div class="pyre-blog-title">
+			<h1 class="md-display-1" ng-bind="::nav.blogSettings.blogTitle">Title</h1>
+		</div>
+		
+		<div class="pyre-nav-separator"></div>
+
+		<div class="pyre-blog-tagline">
+			<p class="md-caption" ng-bind="::nav.blogSettings.blogSummary"></p>
+		</div>
+
+		<div class="pyre-nav-separator"></div>
+
+		<nav class="pyre-nav">
+			<ul>
+				<li><a ui-sref="main.home">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
 	</div>
-	
-	<div class="pyre-nav-separator"></div>
 
-	<div class="pyre-blog-tagline">
-		<p class="md-caption" ng-bind="::nav.blogSettings.blogSummary"></p>
-	</div>
-
-	<div class="pyre-nav-separator"></div>
-
-	<nav class="pyre-nav">
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
-	</nav>		
+	<div class="pyre-action-buttons account-section" flex>
+		<a ui-sref="main.login">Login</a>
+	</div>	
 </md-sidenav>

@@ -1,11 +1,16 @@
 /** @ngInject */
-export function config($logProvider: angular.ILogProvider, toastrConfig: any) {
+export function config($logProvider: angular.ILogProvider, toastrConfig: any, $mdThemingProvider: angular.material.IThemingProvider) {
 	// enable log
 	$logProvider.debugEnabled(true);
-	// set options third-party lib
+
+	// Setup Toastr
 	toastrConfig.allowHtml = true;
 	toastrConfig.timeOut = 3000;
 	toastrConfig.positionClass = 'toast-top-right';
-	toastrConfig.preventDuplicates = true;
 	toastrConfig.progressBar = true;
+
+	// Material Theme
+	$mdThemingProvider.theme('default')
+		.primaryPalette('grey')
+		.accentPalette('blue');
 }

@@ -10,6 +10,7 @@ import { SettingsService } from './integration/settings.service';
 import { FirebaseGatewayService } from './integration/firebase.gateway.service';
 
 // Controllers
+import { MainController } from './main/main.controller';
 import { NavigationController } from './components/navbar/navigation.controller';
 import { HomeController } from './home/home.controller';
 
@@ -48,6 +49,7 @@ module pyreBlog {
 		.service('firebaseGatewayService', FirebaseGatewayService)
 
 		// Controllers
+		.controller('MainController', MainController)
 		.controller('NavigationController', NavigationController)
 		.controller('HomeController', HomeController);
 }

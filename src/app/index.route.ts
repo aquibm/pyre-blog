@@ -6,6 +6,8 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 		.state('main', {
 			abstract: true,
 			templateUrl: 'app/main/main.html',
+			controller: 'MainController',
+			controllerAs: 'vm',
 
 			/* @ngInject */
 			resolve: (settingsService: ISettingsService) => {
@@ -18,6 +20,11 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 			templateUrl: 'app/home/home.html',
 			controller: 'HomeController',
 			controllerAs: 'vm'
+		})
+
+		.state('main.login', {
+			url: '/login',
+			templateUrl: 'app/user/login.html'
 		});
 
 	$urlRouterProvider.otherwise('/');

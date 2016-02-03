@@ -1,3 +1,11 @@
+<h1 align="center">
+	<br>
+	<img width="400" src="https://rawgit.com/aquibm/pyre-blog/master/pyre-logo.png" alt="pyre">
+	<br>
+	<br>
+	<br>
+</h1>
+
 > An open source backend-less blog designed to leverage SaaS technologies like Firebase and Imgur.
 
 ### Table of Contents

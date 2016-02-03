@@ -6,16 +6,16 @@
 
 				<md-input-container>
 					<label>Email</label>
-					<input type="text" name="email">
+					<input type="text" name="email" ng-model="vm.email">
 				</md-input-container>
 
 				<md-input-container>
 					<label>Password</label>
-					<input type="password" name="password">
+					<input type="password" name="password" ng-model="vm.password">
 				</md-input-container>
 
 				<div layout="row" class="login-button-wrap">
-					<md-button class="md-raised md-primary">Login</md-button>
+					<md-button class="md-raised md-primary" ng-click="vm.login()">Login</md-button>
 				</div>
 			</ng-form>
 		</md-card-content>

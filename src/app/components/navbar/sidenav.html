@@ -21,7 +21,12 @@
 		</nav>
 	</div>
 
-	<div class="pyre-action-buttons account-section" flex>
-		<a ui-sref="main.login">Login</a>
+	<div class="pyre-account-section" flex ng-if="nav.isLoggedIn()">
+		<div class="pyre-avatar" style="background-image: url({{nav.getAvatarUri()}})"></div>
+		<div class="pyre-user-actions">
+			<md-button class="md-raised md-primary" ng-click="nav.logout()">
+				Logout
+			</md-button>
+		</div>
 	</div>	
 </md-sidenav>

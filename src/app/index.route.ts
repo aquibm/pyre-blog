@@ -24,7 +24,9 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 
 		.state('main.login', {
 			url: '/login',
-			templateUrl: 'app/user/login.html'
+			templateUrl: 'app/user/login.html',
+			controller: 'LoginController',
+			controllerAs: 'vm'
 		});
 
 	$urlRouterProvider.otherwise('/');

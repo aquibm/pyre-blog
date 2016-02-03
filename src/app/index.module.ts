@@ -8,14 +8,17 @@ import { runBlock } from './index.run';
 // Services
 import { SettingsService } from './integration/settings.service';
 import { FirebaseGatewayService } from './integration/firebase.gateway.service';
+import { UserService } from './user/user.service';
 
 // Controllers
 import { MainController } from './main/main.controller';
 import { NavigationController } from './components/navbar/navigation.controller';
 import { HomeController } from './home/home.controller';
+import { LoginController } from './user/login.controller.ts';
 
 // Libraries
 declare var moment: moment.MomentStatic;
+declare var _: _.LoDashStatic;
 declare var Firebase;
 
 module pyreBlog {
@@ -39,6 +42,7 @@ module pyreBlog {
 		.config(routerConfig)
 		.constant('moment', moment)
 		.constant('Firebase', Firebase)
+		.constant('_', _)
 
 		// Config
 		.config(config)
@@ -47,9 +51,11 @@ module pyreBlog {
 		// Services
 		.service('settingsService', SettingsService)
 		.service('firebaseGatewayService', FirebaseGatewayService)
+		.service('userService', UserService)
 
 		// Controllers
 		.controller('MainController', MainController)
 		.controller('NavigationController', NavigationController)
-		.controller('HomeController', HomeController);
+		.controller('HomeController', HomeController)
+		.controller('LoginController', LoginController);
 }

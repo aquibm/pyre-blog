@@ -58,17 +58,27 @@ md-sidenav.pyre-navigation {
 		}
 	}
 
-	.pyre-action-buttons {
-		margin-left: 10%;
-		margin-right: 10%;
-		margin-bottom: 10px;
+	.pyre-account-section {
 		display: flex;
-		flex-shrink: 2;
-		align-items: flex-end;
+		flex: 0 0 70px;
+		align-items: center;
+		justify-content: space-between;
+		border-top: 1px solid #555;
 
-		a {
-			color: white;
-			text-decoration: none;
+		.pyre-avatar {
+			background-image: url(https://placehold.it/60x60/B0AE94/000?text=P);
+			width: 48px;
+			height: 48px;
+			border-radius: 100%;
+			background-size: cover;
+			border: 2px solid #DADFE1;
+			display: flex;
+			flex: 0 0 46px;
+			margin-left: 10px;
+		}
+
+		.pyre-user-actions {
+			margin-right: 10px;
 		}
 	}
 }

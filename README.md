@@ -8,9 +8,11 @@
 
 > An open source backend-less blog designed to leverage SaaS technologies like Firebase and Imgur.
 
+
 ### Table of Contents
 - [Development Guide](#development-guide)
 
+-
 ### Development Guide
 
 1. `npm install -g gulp bower`

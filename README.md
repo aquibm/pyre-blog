@@ -1,8 +1,14 @@
-# pyre-blog
-A backend-less blogging platform.
+> An open source backend-less blog designed to leverage SaaS technologies like Firebase and Imgur.
 
-# development
-npm install
-bower install
-tsd install
-gulp serve
+### Table of Contents
+- [Development Guide](#development-guide)
+
+### Development Guide
+
+1. `npm install -g gulp bower`
+2. Clone the project.
+3. Run `npm install`
+4. Run `bower install`
+5. Run `tsd install`
+
+Use `gulp serve` to view the blog locally.

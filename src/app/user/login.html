@@ -1,21 +1,25 @@
 <div class="login-form-wrap" flex layout="column">
 	<md-card class="login-form">
 		<md-card-content>
-			<ng-form name="loginForm" layout="column" flex>
+			<div class="loading" ng-show="vm.isLoading" flex layout="row" layout-align="space-around">
+				<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+			</div>
+
+			<ng-form name="loginForm" ng-hide="vm.isLoading" ng-submit="vm.login()" layout="column" flex>
 				<h1 class="md-title">Login</h1>
 
 				<md-input-container>
 					<label>Email</label>
-					<input type="text" name="email">
+					<input type="text" name="email" autofocus ng-model="vm.email" pyre-on-return-pressed="vm.login()" pyre-focus-on="!vm.isLoading">
 				</md-input-container>
 
 				<md-input-container>
 					<label>Password</label>
-					<input type="password" name="password">
+					<input type="password" name="password" ng-model="vm.password" pyre-on-return-pressed="vm.login()">
 				</md-input-container>
 
 				<div layout="row" class="login-button-wrap">
-					<md-button class="md-raised md-primary">Login</md-button>
+					<md-button class="md-raised md-primary" ng-click="vm.login()">Login</md-button>
 				</div>
 			</ng-form>
 		</md-card-content>

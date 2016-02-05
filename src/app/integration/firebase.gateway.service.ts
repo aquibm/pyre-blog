@@ -1,5 +1,6 @@
 export interface IFirebaseGatewayService {
 	getSyncedObject(path: string): AngularFireObject;
+	getReference(): Firebase;
 }
 
 export class FirebaseGatewayService {
@@ -8,8 +9,12 @@ export class FirebaseGatewayService {
 	private firebaseUri: string;
 
 	/* @ngInject */
-	constructor(private Firebase: Firebase, private $firebaseObject: AngularFireObjectService) {
+	constructor(private $firebaseObject: AngularFireObjectService) {
 		this.firebaseUri = 'http:://pyre.firebaseio.com/';
+	}
+
+	public getReference(): Firebase {
+		return new Firebase(this.firebaseUri);
 	}
 
 	public getSyncedObject(path: string): AngularFireObject {

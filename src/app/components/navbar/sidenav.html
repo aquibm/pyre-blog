@@ -13,15 +13,24 @@
 		<div class="pyre-nav-separator"></div>
 
 		<nav class="pyre-nav">
+			<ul ng-if="nav.isUserLoggedIn()">
+				<li><a ui-sref="main.dashboard">Dashboard</a></li>
+			</ul>
+			
 			<ul>
 				<li><a ui-sref="main.home">Home</a></li>
 				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="https://github.com/aquibm/pyre-blog" target="_blank">Github</a></li>
 			</ul>
 		</nav>
 	</div>
 
-	<div class="pyre-action-buttons account-section" flex>
-		<a ui-sref="main.login">Login</a>
+	<div class="pyre-account-section" flex ng-if="nav.isUserLoggedIn()">
+		<div class="pyre-avatar" style="background-image: url({{nav.getAvatarUri()}})"></div>
+		<div class="pyre-user-actions">
+			<md-button class="md-raised md-primary" ng-click="nav.logout()">
+				Logout
+			</md-button>
+		</div>
 	</div>	
 </md-sidenav>

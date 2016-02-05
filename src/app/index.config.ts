@@ -1,5 +1,5 @@
 /** @ngInject */
-export function config($logProvider: angular.ILogProvider, toastrConfig: any, $mdThemingProvider: angular.material.IThemingProvider) {
+export function config($logProvider: angular.ILogProvider, toastrConfig: angular.toastr.IToastrConfig, $mdThemingProvider: angular.material.IThemingProvider) {
 	// enable log
 	$logProvider.debugEnabled(true);
 

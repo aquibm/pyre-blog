@@ -16,6 +16,10 @@ import { NavigationController } from './components/navbar/navigation.controller'
 import { HomeController } from './home/home.controller';
 import { LoginController } from './user/login.controller.ts';
 
+// Directives
+import { pyreOnReturnPressed } from './user/pyre.user.directives.ts';
+import { pyreFocusOn } from './user/pyre.user.directives.ts';
+
 // Libraries
 declare var moment: moment.MomentStatic;
 declare var _: _.LoDashStatic;
@@ -57,5 +61,9 @@ module pyreBlog {
 		.controller('MainController', MainController)
 		.controller('NavigationController', NavigationController)
 		.controller('HomeController', HomeController)
-		.controller('LoginController', LoginController);
+		.controller('LoginController', LoginController)
+
+		// Directives
+		.directive('pyreOnReturnPressed', pyreOnReturnPressed)
+		.directive('pyreFocusOn', pyreFocusOn);
 }

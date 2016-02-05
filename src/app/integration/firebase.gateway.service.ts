@@ -9,7 +9,7 @@ export class FirebaseGatewayService {
 	private firebaseUri: string;
 
 	/* @ngInject */
-	constructor(private Firebase: FirebaseStatic, private $firebaseObject: AngularFireObjectService) {
+	constructor(private $firebaseObject: AngularFireObjectService) {
 		this.firebaseUri = 'http:://pyre.firebaseio.com/';
 	}
 

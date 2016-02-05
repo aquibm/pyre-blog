@@ -7,7 +7,8 @@ export class NavigationController {
 	public blogSettings: AngularFireObject;
 
 	/* @ngInject */
-	constructor(private $mdSidenav: angular.material.ISidenavService, settingsService: ISettingsService, private userService: IUserService) {
+	constructor(private $mdSidenav: angular.material.ISidenavService, settingsService: ISettingsService, private userService: IUserService,
+		private $state: any) {
 		this.blogSettings = settingsService.getSettings();
 	}
 
@@ -20,11 +21,12 @@ export class NavigationController {
 		return authData.password.profileImageURL;
 	}
 
-	public isLoggedIn(): boolean {
+	public isUserLoggedIn(): boolean {
 		return this.userService.isLoggedIn();
 	}
 
 	public logout(): void {
 		this.userService.unauthenticate();
+		this.$state.go('main.home');
 	}
 }

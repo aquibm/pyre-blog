@@ -5,11 +5,20 @@ export interface ICredentials {
 	password: string;
 }
 
+export interface IPyreAuthData extends FirebaseAuthData {
+	password: IPyrePasswordData;
+}
+
+export interface IPyrePasswordData {
+	email: string;
+	profileImageURL: string;
+}
+
 export interface IUserService {
 	isLoggedIn(): boolean;
 	authenticate(credentials: ICredentials): ng.IPromise<FirebaseAuthData>;
 	unauthenticate(): void;
-	getAuthData(): FirebaseAuthData;
+	getAuthData(): IPyreAuthData;
 }
 
 export class UserService implements IUserService {
@@ -18,7 +27,7 @@ export class UserService implements IUserService {
 	private auth: AngularFireAuth;
 
 	/* @ngInject */
-	constructor(firebaseGatewayService: IFirebaseGatewayService, $firebaseAuth: AngularFireAuthService, private _: _.LoDashStatic) {
+	constructor(firebaseGatewayService: IFirebaseGatewayService, $firebaseAuth: AngularFireAuthService) {
 		this.auth = $firebaseAuth(firebaseGatewayService.getReference());
 	}
 
@@ -26,8 +35,8 @@ export class UserService implements IUserService {
 		return this.auth.$authWithPassword(credentials);
 	}
 
-	public getAuthData(): FirebaseAuthData {
-		return this.auth.$getAuth();
+	public getAuthData(): IPyreAuthData {
+		return <IPyreAuthData> this.auth.$getAuth();
 	}
 
 	public unauthenticate(): void {

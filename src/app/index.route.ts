@@ -1,9 +1,13 @@
 import { ISettingsService } from './integration/settings.service';
 
-/** @ngInject */
+export interface IExtendedState extends angular.ui.IState {
+	authenticate?: boolean;
+}
+
+/* @ngInject */
 export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
 	$stateProvider
-		.state('main', {
+		.state('main', <IExtendedState> {
 			abstract: true,
 			templateUrl: 'app/main/main.html',
 			controller: 'MainController',
@@ -15,18 +19,24 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 			}
 		})
 
-		.state('main.home', {
+		.state('main.home', <IExtendedState> {
 			url: '/',
 			templateUrl: 'app/home/home.html',
 			controller: 'HomeController',
 			controllerAs: 'vm'
 		})
 
-		.state('main.login', {
+		.state('main.login', <IExtendedState> {
 			url: '/login',
 			templateUrl: 'app/user/login.html',
 			controller: 'LoginController',
 			controllerAs: 'vm'
+		})
+
+		.state('main.dashboard', <IExtendedState> {
+			url: '/dashboard',
+			templateUrl: 'app/dashboard/dashboard.html',
+			authenticate: true
 		});
 
 	$urlRouterProvider.otherwise('/');

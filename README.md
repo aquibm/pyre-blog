@@ -10,10 +10,18 @@
 
 
 ### Table of Contents
+- [Preview](#preview)
 - [Development Guide](#development-guide)
 - [Firebase Schema](#firebase-schema)
 
 -
+
+### Preview
+View live demo
+![Demo](https://rawgit.com/aquibm/pyre-blog/master/pyre-preview.png)
+
+-
+
 ### Development Guide
 
 1. `npm install -g gulp bower`

@@ -14,11 +14,13 @@ import { UserService } from './user/user.service';
 import { MainController } from './main/main.controller';
 import { NavigationController } from './components/navbar/navigation.controller';
 import { HomeController } from './home/home.controller';
-import { LoginController } from './user/login.controller.ts';
+import { LoginController } from './user/login.controller';
 
 // Directives
-import { pyreOnReturnPressed } from './user/pyre.user.directives.ts';
-import { pyreFocusOn } from './user/pyre.user.directives.ts';
+import { pyreSidenav } from './components/navbar/navigation.directives';
+import { pyreNavbar } from './components/navbar/navigation.directives';
+import { pyreOnReturnPressed } from './user/pyre.user.directives';
+import { pyreFocusOn } from './user/pyre.user.directives';
 
 // Libraries
 declare var moment: moment.MomentStatic;
@@ -64,6 +66,8 @@ module pyreBlog {
 		.controller('LoginController', LoginController)
 
 		// Directives
+		.directive('pyreSidenav', pyreSidenav)
+		.directive('pyreNavbar', pyreNavbar)
 		.directive('pyreOnReturnPressed', pyreOnReturnPressed)
 		.directive('pyreFocusOn', pyreFocusOn);
 }

@@ -17,7 +17,7 @@
 -
 
 ### Preview
-View live demo
+[View live demo](https://pyre.firebaseapp.com)
 ![Demo](https://rawgit.com/aquibm/pyre-blog/master/pyre-preview.png)
 
 -

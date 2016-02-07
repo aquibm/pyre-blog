@@ -1,0 +1,58 @@
+marked.pyre-render-markdown {
+	
+	// Headings
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 15px;
+	    margin-bottom: 15px;
+	    line-height: 1.1;
+	    font-weight: 500;
+	}
+
+	// Images
+	img {
+		display: block;
+		margin: auto;
+	}
+	
+	// Block Quotes
+	blockquote {
+		padding: 0 15px;
+		color: #777;
+    	border-left: 4px solid #ddd;
+    	margin-left: 0;
+	}
+
+	// Links
+	a {
+		color: #4078c0;
+		text-decoration: none;
+	}
+
+	// Code
+	code {
+		background: #F5F5F5;
+		font-size: 14px;
+	}
+
+	pre {
+		background: #F5F5F5;
+		word-break: normal;
+		word-wrap: normal;
+		padding: 16px;
+    	line-height: 1.45;
+    	overflow: auto;
+
+    	code {
+    		display: block;
+    		width: 1px; // Weird hack to make alignment work -- I don't evevn know.
+    	}
+	}
+
+	// Horizontal Rule
+	.pyre-md-separator {
+		padding-bottom: 0.3em;
+	    font-size: 1.75em;
+	    line-height: 1.225;
+	    border-bottom: 1px solid #eee;
+	}
+}

@@ -2,6 +2,7 @@
 
 // Config
 import { config } from './index.config';
+import { configureMarkdown } from './index.config';
 import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 
@@ -24,6 +25,7 @@ import { pyreFocusOn } from './user/pyre.user.directives.ts';
 declare var moment: moment.MomentStatic;
 declare var _: _.LoDashStatic;
 declare var Firebase;
+declare var hljs;
 
 module pyreBlog {
 	'use strict';
@@ -38,18 +40,21 @@ module pyreBlog {
 		'ui.router',
 		'ngMaterial',
 		'toastr',
-		'firebase'
+		'firebase',
+		'hc.marked'
 	];
 
 	angular.module('pyreBlog', dependencies)
 		// Constants
-		.config(routerConfig)
 		.constant('moment', moment)
 		.constant('Firebase', Firebase)
 		.constant('_', _)
+		.constant('hljs', hljs)
 
 		// Config
+		.config(routerConfig)
 		.config(config)
+		.config(configureMarkdown)
 		.run(runBlock)
 
 		// Services

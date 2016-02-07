@@ -64,11 +64,15 @@ md-content.pyre-blog-page {
 	flex-direction: column;
 	align-items: center;
 	background: #DADFE1;
+
+	.pyre-blog-page-wrap {
+		align-self: stretch;
+	}
 }
 
 @media screen and (min-width: 1700px) {
 	md-content.pyre-blog-page {
-		padding-top: 70px;
+		padding: 70px 140px 0 140px;
 	}
 }
 
@@ -80,7 +84,7 @@ md-card md-card-title {
 }
 
 .pyre-blog-post {
-	max-width: 1280px;
+	max-width: 100%;
 	margin-bottom: 30px;
 
 	&.no-media {
@@ -91,6 +95,10 @@ md-card md-card-title {
 		margin: 0 20px;
 		border-top: 1px solid #eee;
 	}
+}
+
+md-card.pyre-page {
+	border-top: 5px solid #333;
 }
 
 /**

@@ -1,4 +1,5 @@
 import { ISettingsService } from './integration/settings.service';
+import { IFirebaseGatewayService } from './integration/firebase.gateway.service';
 
 export interface IExtendedState extends angular.ui.IState {
 	authenticate?: boolean;
@@ -29,7 +30,16 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 
 		.state('main.about', <IExtendedState> {
 			url: '/about',
-			templateUrl: 'app/about/about.html'
+			templateUrl: 'app/about/about.html',
+			controller: 'AboutController',
+			controllerAs: 'vm',
+
+			resolve: {
+				/* @ngInject */
+				aboutData: (firebaseGatewayService: IFirebaseGatewayService) => {
+					return firebaseGatewayService.getSyncedObject('aboutPage');
+				}
+			}
 		})
 
 		.state('main.login', <IExtendedState>{

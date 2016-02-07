@@ -16,6 +16,7 @@ import { MainController } from './main/main.controller';
 import { NavigationController } from './components/navbar/navigation.controller';
 import { HomeController } from './home/home.controller';
 import { LoginController } from './user/login.controller';
+import { AboutController } from './about/about.controller';
 
 // Directives
 import { pyreSidenav } from './components/navbar/navigation.directives';
@@ -69,6 +70,7 @@ module pyreBlog {
 		.controller('NavigationController', NavigationController)
 		.controller('HomeController', HomeController)
 		.controller('LoginController', LoginController)
+		.controller('AboutController', AboutController)
 
 		// Directives
 		.directive('pyreSidenav', pyreSidenav)

@@ -8,14 +8,19 @@ export interface IExtendedState extends angular.ui.IState {
 export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
 	$stateProvider
 		.state('main', <IExtendedState>{
+<<<<<<< HEAD
 			abstract: true,
+=======
+>>>>>>> master
 			templateUrl: 'app/main/main.html',
 			controller: 'MainController',
 			controllerAs: 'vm',
 
-			/* @ngInject */
-			resolve: (settingsService: ISettingsService) => {
-				return settingsService.primeSettings();
+			resolve: {
+				/* @ngInject */
+				settings: (settingsService: ISettingsService) => {
+					return settingsService.primeSettings();
+				}
 			}
 		})
 
@@ -26,11 +31,14 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 			controllerAs: 'vm'
 		})
 
+<<<<<<< HEAD
 		.state('main.about', <IExtendedState> {
 			url: '/about',
 			templateUrl: 'app/about/about.html'
 		})
 
+=======
+>>>>>>> master
 		.state('main.login', <IExtendedState>{
 			url: '/login',
 			templateUrl: 'app/user/login.html',

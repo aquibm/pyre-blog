@@ -23,6 +23,7 @@ import { pyreSidenav } from './components/navbar/navigation.directives';
 import { pyreNavbar } from './components/navbar/navigation.directives';
 import { pyreOnReturnPressed } from './user/pyre.user.directives';
 import { pyreFocusOn } from './user/pyre.user.directives';
+import { pyreLazyLoad } from './main/pyre.lazy.load.directive';
 
 // Libraries
 declare var moment: moment.MomentStatic;
@@ -76,5 +77,6 @@ module pyreBlog {
 		.directive('pyreSidenav', pyreSidenav)
 		.directive('pyreNavbar', pyreNavbar)
 		.directive('pyreOnReturnPressed', pyreOnReturnPressed)
-		.directive('pyreFocusOn', pyreFocusOn);
+		.directive('pyreFocusOn', pyreFocusOn)
+		.directive('pyreLazyLoad', pyreLazyLoad);
 }

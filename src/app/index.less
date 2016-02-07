@@ -107,6 +107,17 @@ md-card.pyre-page {
 	border-top: 5px solid #333;
 }
 
+// Lazy load images
+img {
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+img[data-src] {
+	opacity: 0;
+	background: #bada55;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your less files automatically

@@ -15,8 +15,10 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 
 			resolve: {
 				/* @ngInject */
-				settings: (settingsService: ISettingsService) => {
-					return settingsService.primeSettings();
+				settings: (settingsService: ISettingsService, nanobar: any) => {
+					return settingsService.primeSettings().then(() => {
+						nanobar.go(40);
+					});
 				}
 			}
 		})
@@ -36,8 +38,11 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 
 			resolve: {
 				/* @ngInject */
-				aboutData: (firebaseGatewayService: IFirebaseGatewayService) => {
-					return firebaseGatewayService.getSyncedObject('aboutPage');
+				aboutData: (firebaseGatewayService: IFirebaseGatewayService, nanobar: any) => {
+					return firebaseGatewayService.getSyncedObject('aboutPage').$loaded((data: any) => {
+						nanobar.go(70);
+						return data;
+					});
 				}
 			}
 		})

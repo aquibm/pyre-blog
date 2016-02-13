@@ -30,6 +30,7 @@ declare var moment: moment.MomentStatic;
 declare var _: _.LoDashStatic;
 declare var Firebase;
 declare var hljs;
+declare var Nanobar;
 
 module pyreBlog {
 	'use strict';
@@ -48,12 +49,18 @@ module pyreBlog {
 		'hc.marked'
 	];
 
+	var nanobar = new Nanobar({
+		bg: '#607D8B',
+		id: 'pageLoader'
+	});
+
 	angular.module('pyreBlog', dependencies)
 		// Constants
 		.constant('moment', moment)
 		.constant('Firebase', Firebase)
 		.constant('_', _)
 		.constant('hljs', hljs)
+		.constant('nanobar', nanobar)
 
 		// Config
 		.config(routerConfig)

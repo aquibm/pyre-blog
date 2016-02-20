@@ -7,8 +7,8 @@ export class NavigationController {
 	public blogSettings: AngularFireObject;
 
 	/* @ngInject */
-	constructor(private $mdSidenav: angular.material.ISidenavService, settingsService: ISettingsService, private userService: IUserService,
-		private $state: any) {
+	constructor(private $mdSidenav: angular.material.ISidenavService, settingsService: ISettingsService,
+		private userService: IUserService, private $state: any) {
 		this.blogSettings = settingsService.getSettings();
 	}
 
@@ -21,8 +21,21 @@ export class NavigationController {
 		return authData.password.profileImageURL;
 	}
 
+	public getEmail(): string {
+		var authData = this.userService.getAuthData();
+		return authData.password.email;
+	}
+
 	public isUserLoggedIn(): boolean {
 		return this.userService.isLoggedIn();
+	}
+
+	public navigateToState(state: string): void {
+		this.$state.go(state);
+	}
+
+	public isCurrentState(stateName: string): boolean {
+		return this.$state.current.name === stateName;
 	}
 
 	public logout(): void {

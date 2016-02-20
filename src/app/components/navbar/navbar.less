@@ -3,7 +3,7 @@ md-sidenav.pyre-navigation {
 	color: white;
 	justify-content: center;
 	
-	.blog-section {
+	.pyre-blog-section {
 		display: flex;
 		padding-top: 30%;
 	}
@@ -56,10 +56,32 @@ md-sidenav.pyre-navigation {
 
 	.pyre-account-section {
 		display: flex;
-		flex: 0 0 70px;
-		align-items: center;
-		justify-content: space-between;
-		border-top: 1px solid #555;
+
+		.pyre-name-section {
+			margin-top: 10px;
+			border-bottom: 1px solid #494949;
+
+			.pyre-user {
+				margin: 0 0 20px 10px;
+
+				p {
+					margin: 0;
+				}
+			}
+		}
+
+		.pyre-admin-search {
+			margin: 20px 30px 0 15px;
+
+			input {
+				background: #333;
+				border: 1px solid #888;
+				color: white;
+				padding: 5px;
+				width: 100%;
+			}
+
+		}
 
 		.pyre-avatar {
 			background-image: url(https://placehold.it/60x60/B0AE94/000?text=P);
@@ -73,8 +95,46 @@ md-sidenav.pyre-navigation {
 			margin-left: 10px;
 		}
 
-		.pyre-user-actions {
-			margin-right: 10px;
+		.pyre-admin-menu {
+			.md-subheader-inner {
+				background: #333;
+				color: #ccc;
+			}
+
+			.md-subheader {
+				margin-top: 20px;
+
+				&:first-child {
+					margin-top: 10px;
+				}
+			}
+
+			md-list-item {
+				.md-button {
+					border-radius: 0;
+
+					&:hover {
+						background-color: #DADFE1;
+						color: #333;
+					}
+				}
+
+				i.material-icons {
+					margin-right: 10px;
+				}
+
+				&.active {
+					.md-button {
+						background-color: #494949;
+						border-left: 3px solid #DADFE1;
+
+						&:hover {
+							background-color: #DADFE1;
+							color: #333;
+						}
+					}
+				}
+			}
 		}
 	}
 }

@@ -1,5 +1,5 @@
 <md-sidenav flex layout="column" class="md-sidenav-left md-whiteframe-z2 pyre-navigation" md-component-id="pyreSidenav" md-is-locked-open="$mdMedia('gt-md')">
-	<div class="blog-section" flex layout="column">
+	<div class="pyre-blog-section" flex layout="column" ng-if="!nav.isUserLoggedIn()">
 		<div class="pyre-blog-title">
 			<h1 class="md-display-1" ng-bind="::nav.blogSettings.blogTitle">Title</h1>
 		</div>
@@ -13,10 +13,6 @@
 		<div class="pyre-nav-separator"></div>
 
 		<nav class="pyre-nav">
-			<ul ng-if="nav.isUserLoggedIn()">
-				<li><a ui-sref="main.dashboard">Dashboard</a></li>
-			</ul>
-			
 			<ul>
 				<li><a ui-sref="main.home">Home</a></li>
 				<li><a ui-sref="main.about">About</a></li>
@@ -25,12 +21,48 @@
 		</nav>
 	</div>
 
-	<div class="pyre-account-section" flex ng-if="nav.isUserLoggedIn()">
-		<div class="pyre-avatar" style="background-image: url({{nav.getAvatarUri()}})"></div>
-		<div class="pyre-user-actions">
-			<md-button class="md-raised md-primary" ng-click="nav.logout()">
-				Logout
-			</md-button>
+	<div class="pyre-account-section" flex layout="column" ng-if="nav.isUserLoggedIn()">
+		<div class="pyre-name-section" layout="row">
+			<div class="pyre-avatar" style="background-image: url({{nav.getAvatarUri()}})" flex></div>
+			<div class="pyre-user">
+				<p>Aquib Master</p>
+				<small ng-bind="nav.getEmail()"></small>
+			</div>
 		</div>
-	</div>	
+		
+		<div class="pyre-admin-search">
+			<input type="text" placeholder="Search">
+		</div>
+
+		<div class="pyre-admin-menu">
+			<md-list>
+				<md-subheader class="md-no-sticky">Content</md-subheader>
+				<md-list-item ng-click="nav.navigateToState('admin.newPost')" ng-class="{'active': nav.isCurrentState('admin.newPost')}">
+					<i class="material-icons">add_box</i> New Post
+				</md-list-item>
+				<md-list-item ng-click="nav.navigateToState('admin.posts')" ng-class="{'active': nav.isCurrentState('admin.posts')}">
+					<i class="material-icons">inbox</i> Posts
+				</md-list-item>
+
+				<md-subheader class="md-no-sticky">Settings</md-subheader>
+				<md-list-item ng-click="nav.navigateToState('admin.blogSettings')" ng-class="{'active': nav.isCurrentState('admin.blogSettings')}">
+					<i class="material-icons">settings</i> Blog
+				</md-list-item>
+				<md-list-item ng-click="nav.navigateToState('admin.navigationSettings')" ng-class="{'active': nav.isCurrentState('admin.navigationSettings')}">
+					<i class="material-icons">menu</i> Navigation
+				</md-list-item>
+				<md-list-item ng-click="nav.navigateToState('admin.userSettings')" ng-class="{'active': nav.isCurrentState('admin.userSettings')}">
+					<i class="material-icons">people</i> Users
+				</md-list-item>
+
+				<md-subheader class="md-no-sticky">Actions</md-subheader>
+				<md-list-item ng-click="nav.navigateToState('main.home')" ng-class="{'active': nav.isCurrentState('main.home')}">
+					<i class="material-icons">web_asset</i> View Blog
+				</md-list-item>
+				<md-list-item ng-click="nav.logout()">
+					<i class="material-icons">exit_to_app</i> Logout
+				</md-list-item>
+			</md-list>
+		</div>
+	</div>
 </md-sidenav>

@@ -3,7 +3,7 @@
  <md-content flex layout="column">
 	<pyre-navbar></pyre-navbar>
 
-	<md-content class="pyre-blog-page" flex>
+	<md-content class="pyre-blog-page" ng-class="{'admin': vm.isAdminPage()}" flex>
 		<div ui-view flex layout="column" class="pyre-blog-page-wrap"></div>
 	</md-content>
  </md-content>

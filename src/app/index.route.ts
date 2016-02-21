@@ -8,7 +8,7 @@ export interface IExtendedState extends angular.ui.IState {
 /* @ngInject */
 export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
 	$stateProvider
-		.state('main', <IExtendedState>{
+		.state('main', <IExtendedState> {
 			templateUrl: 'app/main/main.html',
 			controller: 'MainController',
 			controllerAs: 'vm',
@@ -23,7 +23,7 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 			}
 		})
 
-		.state('main.home', <IExtendedState>{
+		.state('main.home', <IExtendedState> {
 			url: '/',
 			templateUrl: 'app/home/home.html',
 			controller: 'HomeController',
@@ -47,16 +47,40 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 			}
 		})
 
-		.state('main.login', <IExtendedState>{
+		.state('main.login', <IExtendedState> {
 			url: '/login',
 			templateUrl: 'app/user/login.html',
 			controller: 'LoginController',
 			controllerAs: 'vm'
 		})
 
-		.state('main.dashboard', <IExtendedState>{
-			url: '/dashboard',
-			templateUrl: 'app/dashboard/dashboard.html',
+		.state('main.newPost', <IExtendedState> {
+			url: '/posts/new',
+			templateUrl: 'app/admin/posts/new-post.html',
+			authenticate: true
+		})
+
+		.state('main.posts', <IExtendedState> {
+			url: '/posts',
+			templateUrl: 'app/admin/posts/posts.html',
+			authenticate: true
+		})
+
+		.state('main.blogSettings', <IExtendedState> {
+			url: '/settings/blog',
+			templateUrl: 'app/admin/settings/blog-settings.html',
+			authenticate: true
+		})
+
+		.state('main.navSettings', <IExtendedState> {
+			url: '/settings/navbar',
+			templateUrl: 'app/admin/settings/nav-settings.html',
+			authenticate: true
+		})
+
+		.state('main.userSettings', <IExtendedState> {
+			url: '/settings/user',
+			templateUrl: 'app/admin/settings/user-settings.html',
 			authenticate: true
 		});
 

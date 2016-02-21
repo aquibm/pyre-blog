@@ -29,7 +29,7 @@ export class LoginController {
 		this.userService.authenticate(credentials).then((authData: any) => {
 			this.toastr.success('Logged in successfully!');
 			this.clearCredentials();
-			this.$state.go('main.dashboard');
+			this.$state.go('main.newPost');
 		}).catch((error: Error) => {
 			this.toastr.error(error.message);
 		}).finally(() => {

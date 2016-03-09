@@ -69,6 +69,8 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
 		.state('main.blogSettings', <IExtendedState> {
 			url: '/settings/blog',
 			templateUrl: 'app/admin/settings/blog-settings.html',
+			controller: 'BlogSettingsController',
+			controllerAs: 'ctrl',
 			authenticate: true
 		})
 
